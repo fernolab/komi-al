@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fon">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Komi Al - Assistant Vocal Fon</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+    body { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px; text-align: center; }
+    .container { background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 40px 30px; max-width: 500px; width: 100%; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2); }
+    h1 { font-size: 2.5em; margin-bottom: 10px; }
+    .fon-text { font-size: 1.8em; margin: 20px 0; font-weight: bold; }
+    .fr-text { font-size: 1em; opacity: 0.8; margin-bottom: 30px; }
+    .mic-btn { background: #ff6b6b; border: none; border-radius: 50%; width: 100px; height: 100px; font-size: 40px; cursor: pointer; transition: transform 0.2s; margin: 20px 0; }
+    .mic-btn:active { transform: scale(0.9); }
+    .status { margin-top: 20px; font-size: 0.9em; opacity: 0.7; }
+    footer { margin-top: 30px; font-size: 0.8em; opacity: 0.6; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Komi Al 👋</h1>
+    <div class="fon-text">Komi Al wè mi</div>
+    <div class="fr-text">Komi Al, je suis là pour toi</div>
+    <button class="mic-btn">🎤</button>
+    <div class="fon-text">Bɔ dɔ ɖɔ, mi ɖo to wu</div>
+    <div class="fr-text">Parle, je t'écoute</div>
+    <p class="status">Version 2.0 - Premier assistant vocal en Fon</p>
+  </div>
+  <footer>© 2026 Créé par Fernand | fernolab.github.io</footer>
+  <script>
+    document.querySelector('.mic-btn').addEventListener('click', function() {
+      alert('Bientôt: La reconnaissance vocale en Fon va arriver ici!');
+    });
+  </script>
+</body>
+</html>
