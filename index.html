@@ -30,8 +30,37 @@
   <footer>© 2026 Créé par Fernand | fernolab.github.io</footer>
   <script>
     document.querySelector('.mic-btn').addEventListener('click', function() {
-      alert('Bientôt: La reconnaissance vocale en Fon va arriver ici!');
-    });
+      
+    }if ('webkitSpeechRecognition' in window) {
+    const recognition = new webkitSpeechRecognition();
+    recognition.lang = 'fr-FR'; 
+    recognition.continuous = false;
+
+    recognition.onstart = function() {
+        document.querySelector('.status').innerText = "J'écoute...";
+    };
+
+    recognition.onresult = function(event) {
+        const speech = event.results[0][0].transcript;
+        document.querySelector('.status').innerText = "Tu as dit: " + speech;
+        repondreEnFon(speech);
+    };
+
+    recognition.onerror = function(event) {
+        alert("Erreur micro: " + event.error);
+    };
+
+    recognition.start();
+} else {
+    alert("Votre navigateur ne supporte pas le micro");
+}
+
+function repondreEnFon(texte) {
+    const reponse = "Komi AI a compris: " + texte;
+    const utterance = new SpeechSynthesisUtterance(reponse);
+    utterance.lang = 'fr-FR';
+    speechSynthesis.speak(utterance);
+}
   </script>
 </body>
 </html>
